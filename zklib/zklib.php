@@ -87,9 +87,9 @@
             $u = unpack('S', $this->createChkSum($buf));
             
             if ( is_array( $u ) ) {
-                while( list( $key ) = each( $u ) ) {
-                    $u = $u[$key];
-                    break;
+                foreach ($u as $key => $value) {
+                    $u = $value;  
+                    break;        
                 }
             }
             $chksum = $u;
